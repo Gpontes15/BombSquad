@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c6eks2ovxw3lo"
+path="res://.godot/imported/MI_SFX 13.mp3-d5660e28611f5ac17a24ab3a6ece0051.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/MP3/MI_SFX 13.mp3"
+dest_files=["res://.godot/imported/MI_SFX 13.mp3-d5660e28611f5ac17a24ab3a6ece0051.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
