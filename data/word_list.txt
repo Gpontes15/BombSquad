@@ -1,0 +1,26 @@
+CATEGORY: Days and Months
+	Monday
+	Tuesday
+	Wednesday
+	Thursday
+	Friday
+	Saturday
+	Sunday
+	January
+	February
+	March
+	April
+	May
+	June
+	July
+	August
+	September
+	October
+	November
+	December
+
+CATEGORY: Party Items
+	Cake
+	Baloon
+	Gift
+	Candy

@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="NormalSettings" load_steps=2 format=3 uid="uid://bptpeqdr0lrah"]
+[gd_resource type="Resource" script_class="DifficultySettings" load_steps=2 format=3 uid="uid://bptpeqdr0lrah"]
 
-[ext_resource type="Script" path="res://data/normal_mode.gd" id="1_dp117"]
+[ext_resource type="Script" path="res://data/DifficultySettings.gd" id="1_kul5x"]
 
 [resource]
-script = ExtResource("1_dp117")
+script = ExtResource("1_kul5x")
 name = "NORMAL"
 board_size = 3
 words = Array[String]([])
