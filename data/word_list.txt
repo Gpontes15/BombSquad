@@ -25,10 +25,17 @@ CATEGORY: Party Items
 	Gift
 	Candy
 	Confetti
-	
+
 CATEGORY: Emotions
 	Happiness
 	Sadness
 	Anger
 	Frustration
 	Jealousy
+
+CATEGORY: Rock Bands
+	Rush
+	The Beatles
+	Metallica
+	U2
+	Led Zeppelin

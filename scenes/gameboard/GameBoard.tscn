@@ -1,29 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://b60efsvaw7r5q"]
+[gd_scene load_steps=3 format=3 uid="uid://b60efsvaw7r5q"]
 
 [ext_resource type="Script" path="res://scenes/gameboard/game_board.gd" id="1_jesnc"]
+[ext_resource type="Texture2D" uid="uid://bv78tl5luoff7" path="res://assets/background/city background/evening/evening sky.png" id="2_r6pnc"]
 
 [node name="GameBoard" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_jesnc")
-
-[node name="Grid" type="GridContainer" parent="."]
-unique_name_in_owner = true
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/h_separation = 100
-theme_override_constants/v_separation = 100
+script = ExtResource("1_jesnc")
+
+[node name="EveningSky" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, 1)
+scale = Vector2(3.02632, 3.58889)
+texture = ExtResource("2_r6pnc")
+
+[node name="Grid" type="GridContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 150
+theme_override_constants/v_separation = 150

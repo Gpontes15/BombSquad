@@ -11,6 +11,7 @@ var word_list: Dictionary
 
 func _ready():
 	difficulties = [easy_mode, normal_mode, hard_mode]
+	selected_mode = hard_mode
 	_load_word_list("res://data/word_list.txt")
 
 func select_difficulty(difficulty_name: String):
