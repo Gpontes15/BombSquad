@@ -1,0 +1,12 @@
+[gd_scene load_steps=5 format=3 uid="uid://edgrrp6wbbhc"]
+
+[ext_resource type="Script" path="res://scenes/singletons/GameController.gd" id="1_g12jg"]
+[ext_resource type="Resource" uid="uid://boxyip1gh2l24" path="res://data/hard_mode.tres" id="2_7a5ab"]
+[ext_resource type="Resource" uid="uid://bptpeqdr0lrah" path="res://data/normal_mode.tres" id="3_i0gu6"]
+[ext_resource type="Resource" uid="uid://dxwj8mxjqoiga" path="res://data/easy_mode.tres" id="4_50s7w"]
+
+[node name="GameController" type="Node"]
+script = ExtResource("1_g12jg")
+hard_mode = ExtResource("2_7a5ab")
+normal_mode = ExtResource("3_i0gu6")
+easy_mode = ExtResource("4_50s7w")

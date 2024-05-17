@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EasySettings" load_steps=2 format=3 uid="uid://dxwj8mxjqoiga"]
+
+[ext_resource type="Script" path="res://data/easy_mode.gd" id="1_rxfq4"]
+
+[resource]
+script = ExtResource("1_rxfq4")
+name = "EASY"
+board_size = 3
+words = Array[String]([])
+total_time_sec = 999
+lives = 999
+hints = 3
