@@ -1,7 +1,5 @@
 extends Node
 
-class_name GameController
-
 @export var hard_mode: DifficultySettings = load("res://data/hard_mode.tres")
 @export var normal_mode: DifficultySettings = load("res://data/normal_mode.tres")
 @export var easy_mode: DifficultySettings = load("res://data/easy_mode.tres")

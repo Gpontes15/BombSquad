@@ -14,3 +14,7 @@ config/name="BombSquad"
 run/main_scene="res://scenes/screens/startscreen.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameController="*res://scenes/singletons/GameController.tscn"
