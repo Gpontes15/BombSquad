@@ -24,3 +24,11 @@ CATEGORY: Party Items
 	Baloon
 	Gift
 	Candy
+	Confetti
+	
+CATEGORY: Emotions
+	Happiness
+	Sadness
+	Anger
+	Frustration
+	Jealousy
