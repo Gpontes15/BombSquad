@@ -5,11 +5,12 @@
 
 [node name="GameBoard" type="Control"]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 576.0
+offset_top = 324.0
+offset_right = -576.0
+offset_bottom = -324.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jesnc")
@@ -20,13 +21,45 @@ position = Vector2(1, 1)
 scale = Vector2(3.02632, 3.58889)
 texture = ExtResource("2_r6pnc")
 
-[node name="Grid" type="GridContainer" parent="."]
-unique_name_in_owner = true
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/h_separation = 150
-theme_override_constants/v_separation = 150
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="CategoryPanels" type="VBoxContainer" parent="HBoxContainer/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+alignment = 1
+
+[node name="TimerLabel" type="Label" parent="HBoxContainer/PanelContainer/CategoryPanels"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="LivesAndHints" type="Label" parent="HBoxContainer/PanelContainer/CategoryPanels"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Grid" type="GridContainer" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/h_separation = 120
+theme_override_constants/v_separation = 60
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_lose"]
