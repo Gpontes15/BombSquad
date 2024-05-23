@@ -89,7 +89,9 @@ func _on_word_button_pressed(button: GameButton):
 		pressed_buttons = []
 
 func _win():
+	GameController.winning_cable = randi()%2 + 1
 	print("You win!")
 
 func _lose():
+	timer.stop()
 	print("You lose!")
