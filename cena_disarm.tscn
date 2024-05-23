@@ -64,8 +64,6 @@ size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_sby7r")
 theme_override_font_sizes/font_size = 50
-text = "The wire to 
-disarm the 
-bomb is the 
+text = "A cor do fio do fio para ser removido é
 _______"
 horizontal_alignment = 1
