@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var cor = $MarginContainer/CenterContainer/Rows/Title/Cor
+
 @onready var timer = $Timer
 @onready var timer_label = %TimerLabel
 
