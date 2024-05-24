@@ -8,6 +8,8 @@ extends Control
 @onready var timer_label: Label = %TimerLabel
 
 var category_panel = preload("res://scenes/gameboard/CategoryPanel.tscn")
+var tela_disarm_scene = preload("res://cena_disarm.tscn")
+
 
 # [{ text: String, category: String }]
 var selected_words: Array[Dictionary]
@@ -91,6 +93,7 @@ func _on_word_button_pressed(button: GameButton):
 func _win():
 	GameController.winning_cable = randi()%2 + 1
 	print("You win!")
+	get_tree().change_scene_to_file("res://cena_disarm.tscn")
 
 func _lose():
 	timer.stop()
