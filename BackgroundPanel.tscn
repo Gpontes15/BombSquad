@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpqciqw6kqydi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6paj"]
+bg_color = Color(0.807843, 0.458824, 0, 0.364706)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_e6paj")
