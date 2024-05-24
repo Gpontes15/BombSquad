@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dn4acmyf7uikd"]
+[gd_scene load_steps=9 format=3 uid="uid://dn4acmyf7uikd"]
 
 [ext_resource type="Texture2D" uid="uid://bv78tl5luoff7" path="res://assets/background/city background/evening/evening sky.png" id="1_amjwx"]
 [ext_resource type="Script" path="res://cena_disarm.gd" id="1_v1wub"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bdeymxta0dh8c" path="res://assets/background/city background/evening/evening bush.png" id="4_40xfg"]
 [ext_resource type="Texture2D" uid="uid://copcdx1pkxen2" path="res://assets/background/city background/evening/evening fence.png" id="5_gt1us"]
 [ext_resource type="FontFile" uid="uid://cmqmwrurss7ib" path="res://assets/fonts/Dicier-Pixel.otf" id="6_sby7r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujt1r"]
+bg_color = Color(0, 0, 0, 0.670588)
 
 [node name="cena_disarm" type="CanvasLayer"]
 script = ExtResource("1_v1wub")
@@ -45,6 +48,20 @@ texture_filter = 1
 position = Vector2(580, 615)
 texture = ExtResource("5_gt1us")
 
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -483.0
+offset_top = -179.0
+offset_right = 460.0
+offset_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ujt1r")
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
@@ -71,10 +88,10 @@ size_flags_horizontal = 4
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("6_sby7r")
 theme_override_font_sizes/font_size = 50
-text = "A cor do fio do fio para ser removido é
+text = "a cor do fio para ser removido é
 "
 horizontal_alignment = 1
 

@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://checdhsl8qkd3"]
+[gd_scene load_steps=7 format=3 uid="uid://checdhsl8qkd3"]
 
 [ext_resource type="Texture2D" uid="uid://brbhb6wqwmifr" path="res://assets/background/city background/night/night sky.png" id="1_np6om"]
 [ext_resource type="Script" path="res://canvas_layer.gd" id="1_on45q"]
 [ext_resource type="Texture2D" uid="uid://c7gvpy40v10rk" path="res://assets/background/city background/night/night buildings front.png" id="2_q4r7o"]
 [ext_resource type="Texture2D" uid="uid://bona873lmj5xc" path="res://assets/background/city background/night/night buildings back.png" id="3_osuw0"]
 [ext_resource type="FontFile" uid="uid://cmqmwrurss7ib" path="res://assets/fonts/Dicier-Pixel.otf" id="4_6gi5x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_piofk"]
+bg_color = Color(0, 0, 0, 0.670588)
 
 [node name="cena_loser" type="CanvasLayer"]
 script = ExtResource("1_on45q")
@@ -24,6 +27,20 @@ texture_filter = 1
 position = Vector2(576.5, 451.5)
 scale = Vector2(3.25305, 2.71127)
 texture = ExtResource("3_osuw0")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -217.0
+offset_top = -205.0
+offset_right = 223.0
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_piofk")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15

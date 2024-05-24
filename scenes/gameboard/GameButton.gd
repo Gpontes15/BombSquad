@@ -20,7 +20,8 @@ func _ready():
 	add_child(button)
 
 func select():
-	(button as Button).grab_focus()
+	print("Select: " + text)
+	(button as Button).grab_focus.call_deferred()
 
 func _pressed():
 	pressed.emit()

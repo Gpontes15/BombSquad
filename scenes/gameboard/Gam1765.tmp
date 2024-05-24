@@ -1,0 +1,129 @@
+[gd_scene load_steps=10 format=3 uid="uid://b60efsvaw7r5q"]
+
+[ext_resource type="Script" path="res://scenes/gameboard/game_board.gd" id="1_jesnc"]
+[ext_resource type="Texture2D" uid="uid://bv78tl5luoff7" path="res://assets/background/city background/evening/evening sky.png" id="2_r6pnc"]
+[ext_resource type="Texture2D" uid="uid://3b5w0lr1j0qa" path="res://assets/background/city background/evening/evening buildings back.png" id="3_arb3p"]
+[ext_resource type="Texture2D" uid="uid://bp5d0cgy3mkw2" path="res://assets/background/city background/evening/evening buildings front.png" id="4_rlm4o"]
+[ext_resource type="Texture2D" uid="uid://bdeymxta0dh8c" path="res://assets/background/city background/evening/evening bush.png" id="5_7viaj"]
+[ext_resource type="Texture2D" uid="uid://copcdx1pkxen2" path="res://assets/background/city background/evening/evening fence.png" id="6_41thm"]
+[ext_resource type="Texture2D" uid="uid://b2ckpc2ky3eqx" path="res://assets/character/fem.png" id="7_dcawq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6pf1v"]
+bg_color = Color(0, 0, 0, 0.670588)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2r1d"]
+bg_color = Color(1, 1, 1, 0.964706)
+
+[node name="GameBoard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 576.0
+offset_top = 324.0
+offset_right = -576.0
+offset_bottom = -324.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jesnc")
+
+[node name="EveningSky" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, 1)
+scale = Vector2(3.02632, 3.58889)
+texture = ExtResource("2_r6pnc")
+
+[node name="EveningBuildingsBack" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(4.5, 27.5)
+scale = Vector2(3.52744, 4.14789)
+texture = ExtResource("3_arb3p")
+
+[node name="EveningBuildingsFront" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(6, 6)
+scale = Vector2(3.02895, 4.32653)
+texture = ExtResource("4_rlm4o")
+
+[node name="EveningBush" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(7, 296)
+scale = Vector2(3.02632, 1)
+texture = ExtResource("5_7viaj")
+
+[node name="EveningFence" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2.5, 290)
+scale = Vector2(0.997405, 1)
+texture = ExtResource("6_41thm")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -444.0
+offset_top = -205.0
+offset_right = 499.0
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6pf1v")
+
+[node name="PanelContainer2" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 327.0
+offset_top = -309.0
+offset_right = 559.0
+offset_bottom = -137.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_i2r1d")
+
+[node name="Fem" type="Sprite2D" parent="PanelContainer2"]
+position = Vector2(112, 68)
+scale = Vector2(0.627522, 0.585375)
+texture = ExtResource("7_dcawq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="CategoryPanels" type="VBoxContainer" parent="HBoxContainer/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+alignment = 1
+
+[node name="TimerLabel" type="Label" parent="HBoxContainer/PanelContainer/CategoryPanels"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="LivesAndHints" type="Label" parent="HBoxContainer/PanelContainer/CategoryPanels"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Grid" type="GridContainer" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/h_separation = 120
+theme_override_constants/v_separation = 60
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_lose"]

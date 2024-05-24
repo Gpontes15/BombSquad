@@ -11,6 +11,7 @@ func _ready():
 	control_array = [game_title_label, easy_button, medium_button, hard_button]
 	for control in control_array:
 		(control as Control).visible = false
+	easy_button.grab_focus()
 
 func _process(_delta):
 	if control_array.size() > 0:

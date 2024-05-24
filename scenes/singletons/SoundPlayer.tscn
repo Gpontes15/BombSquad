@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dau67yib42rax"]
+
+[ext_resource type="Script" path="res://scenes/singletons/SoundPlayer.gd" id="1_5841f"]
+
+[node name="SoundPlayer" type="Node"]
+script = ExtResource("1_5841f")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
