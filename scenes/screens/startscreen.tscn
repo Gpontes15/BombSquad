@@ -56,28 +56,26 @@ show_behind_parent = true
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="Button" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/VBoxContainer"]
+[node name="EasyButton" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/VBoxContainer"]
 show_behind_parent = true
 layout_mode = 2
 theme_override_constants/icon_max_width = -1
 theme_override_fonts/font = ExtResource("1_im66r")
 theme_override_font_sizes/font_size = 35
-text = "EAsY"
+text = "easy"
 
-[node name="Button2" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/VBoxContainer"]
+[node name="NormalButton" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_im66r")
 theme_override_font_sizes/font_size = 35
-text = "MEDIUM"
+text = "normal"
 
-[node name="Button3" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/VBoxContainer"]
+[node name="HardButton" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_im66r")
 theme_override_font_sizes/font_size = 35
-text = "HARD"
+text = "hard"
 
-[node name="Button4" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_im66r")
-theme_override_font_sizes/font_size = 35
-text = "OPTIONS"
+[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/VBoxContainer/EasyButton" to="." method="_on_easy_button_pressed"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/VBoxContainer/NormalButton" to="." method="_on_normal_button_pressed"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/VBoxContainer/HardButton" to="." method="_on_hard_button_pressed"]

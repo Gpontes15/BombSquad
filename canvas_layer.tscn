@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://checdhsl8qkd3"]
+[gd_scene load_steps=6 format=3 uid="uid://checdhsl8qkd3"]
 
 [ext_resource type="Texture2D" uid="uid://brbhb6wqwmifr" path="res://assets/background/city background/night/night sky.png" id="1_np6om"]
+[ext_resource type="Script" path="res://canvas_layer.gd" id="1_on45q"]
 [ext_resource type="Texture2D" uid="uid://c7gvpy40v10rk" path="res://assets/background/city background/night/night buildings front.png" id="2_q4r7o"]
 [ext_resource type="Texture2D" uid="uid://bona873lmj5xc" path="res://assets/background/city background/night/night buildings back.png" id="3_osuw0"]
 [ext_resource type="FontFile" uid="uid://cmqmwrurss7ib" path="res://assets/fonts/Dicier-Pixel.otf" id="4_6gi5x"]
 
 [node name="cena_loser" type="CanvasLayer"]
+script = ExtResource("1_on45q")
 
 [node name="NightSky" type="Sprite2D" parent="."]
 position = Vector2(578, 325.5)
@@ -60,3 +62,6 @@ text = "Restart"
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/CenterContainer/Rows/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/Rows/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

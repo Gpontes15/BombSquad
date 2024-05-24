@@ -6,7 +6,6 @@
 script = ExtResource("1_kul5x")
 name = "NORMAL"
 board_size = 3
-words = Array[String]([])
-total_time_sec = 99
+total_time_sec = 60
 lives = 4
 hints = 1

@@ -75,7 +75,7 @@ func _on_word_button_pressed(button: GameButton):
 	for element in pressed_buttons:
 		words.append(element.text as String)
 	
-	if pressed_buttons.size() == 4:
+	if pressed_buttons.size() == settings.board_size:
 		if (pressed_buttons.all(func(b: GameButton): return b.category == button.category)):
 			var new_panel = category_panel.instantiate()
 			new_panel.initialize(button.category, words)
@@ -91,11 +91,11 @@ func _on_word_button_pressed(button: GameButton):
 		pressed_buttons = []
 
 func _win():
-	GameController.winning_cable = randi()%2 + 1
+	GameController.winning_cable = (randi()%2) + 1
 	print("You win!")
-	get_tree().change_scene_to_file("res://cena_disarm.tscn")
+	GameController.goto_scene("res://cena_disarm.tscn")
 
 func _lose():
 	timer.stop()
 	print("You lose!")
-	get_tree().change_scene_to_file("res://canvas_layer.tscn")
+	GameController.goto_scene("res://canvas_layer.tscn")

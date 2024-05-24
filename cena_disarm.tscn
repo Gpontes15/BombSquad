@@ -59,6 +59,14 @@ layout_mode = 2
 layout_mode = 2
 theme_override_constants/separation = 60
 
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/CenterContainer/Rows"]
+layout_mode = 2
+
+[node name="TimerLabel" type="Label" parent="MarginContainer/CenterContainer/Rows/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+
 [node name="Title" type="Label" parent="MarginContainer/CenterContainer/Rows"]
 texture_filter = 1
 layout_mode = 2
@@ -85,3 +93,7 @@ grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
