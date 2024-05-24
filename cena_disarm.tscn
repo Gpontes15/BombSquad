@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dn4acmyf7uikd"]
+[gd_scene load_steps=8 format=3 uid="uid://dn4acmyf7uikd"]
 
 [ext_resource type="Texture2D" uid="uid://bv78tl5luoff7" path="res://assets/background/city background/evening/evening sky.png" id="1_amjwx"]
+[ext_resource type="Script" path="res://cena_disarm.gd" id="1_v1wub"]
 [ext_resource type="Texture2D" uid="uid://bp5d0cgy3mkw2" path="res://assets/background/city background/evening/evening buildings front.png" id="2_jtrco"]
 [ext_resource type="Texture2D" uid="uid://3b5w0lr1j0qa" path="res://assets/background/city background/evening/evening buildings back.png" id="3_gpukw"]
 [ext_resource type="Texture2D" uid="uid://bdeymxta0dh8c" path="res://assets/background/city background/evening/evening bush.png" id="4_40xfg"]
@@ -8,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://cmqmwrurss7ib" path="res://assets/fonts/Dicier-Pixel.otf" id="6_sby7r"]
 
 [node name="cena_disarm" type="CanvasLayer"]
+script = ExtResource("1_v1wub")
 
 [node name="EveningSky" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -65,5 +67,18 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_sby7r")
 theme_override_font_sizes/font_size = 50
 text = "A cor do fio do fio para ser removido é
-_______"
+"
 horizontal_alignment = 1
+
+[node name="Cor" type="Label" parent="MarginContainer/CenterContainer/Rows/Title"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 13.0
+offset_right = 1.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 0
