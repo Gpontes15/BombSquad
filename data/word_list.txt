@@ -1,4 +1,4 @@
-CATEGORY: Days and Months
+CATEGORY: Days
 	Monday
 	Tuesday
 	Wednesday
@@ -6,6 +6,15 @@ CATEGORY: Days and Months
 	Friday
 	Saturday
 	Sunday
+
+CATEGORY: Holidays
+	Easter
+	Christmas
+	Worker's Day
+	Independence Day
+	Carnaval
+
+CATEGORY: Months
 	January
 	February
 	March
@@ -25,6 +34,7 @@ CATEGORY: Party Items
 	Gift
 	Candy
 	Confetti
+	Hat222222222
 
 CATEGORY: Emotions
 	Happiness
@@ -32,10 +42,3 @@ CATEGORY: Emotions
 	Anger
 	Frustration
 	Jealousy
-
-CATEGORY: Rock Bands
-	Rush
-	The Beatles
-	Metallica
-	U2
-	Led Zeppelin

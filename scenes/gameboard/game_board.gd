@@ -20,6 +20,11 @@ var total_time_sec: int
 var lives: int
 var hints: int
 
+var grab_focus_flag = true
+var grab_focus_counter = 10
+
+var buttons = []
+
 func _ready():
 	_select_words()
 	grid.set_columns(settings.board_size)
@@ -36,15 +41,10 @@ func _ready():
 		grid.add_child(button)
 		button.pressed.connect(_on_word_button_pressed.bind(button))
 	
-	(grid.get_children()[0] as GameButton).select()
-	
-	#var new_panel = category_panel.instantiate()
-	#new_panel.initialize("CATEGORIAS", [""] as Array[String])
-	#category_panels.add_child(new_panel)
-	
 	timer.start()
 
 func _process(_delta):
+	buttons = grid.get_children()
 	timer_label.text = str(int(timer.time_left))
 	GameController.time_left = timer.time_left
 	
@@ -52,6 +52,17 @@ func _process(_delta):
 		_win()
 	if lives == 0:
 		_lose()
+		
+	lives_and_hints.text = "Lives: " + str(lives) + " | Hints: " + str(hints)
+		
+	if grab_focus_flag and not buttons.is_empty():
+		grab_focus_counter -= 1
+		if grab_focus_counter == 0:
+			var game_button_to_focus = (grid.get_children()[0] as GameButton)
+			if game_button_to_focus != null:
+				game_button_to_focus.select()
+			grab_focus_flag = false
+			grab_focus_counter = 10
 
 func _select_words():
 	var word_list: Dictionary = GameController.word_list.duplicate(true)
@@ -75,7 +86,7 @@ func _on_word_button_pressed(button: GameButton):
 	for element in pressed_buttons:
 		words.append(element.text as String)
 	
-	if pressed_buttons.size() == 4:
+	if pressed_buttons.size() == settings.board_size:
 		if (pressed_buttons.all(func(b: GameButton): return b.category == button.category)):
 			var new_panel = category_panel.instantiate()
 			new_panel.initialize(button.category, words)
@@ -89,13 +100,14 @@ func _on_word_button_pressed(button: GameButton):
 				pressed_button.set_pressed_no_signal(false)
 			lives -= 1
 		pressed_buttons = []
+		grab_focus_flag = true
 
 func _win():
-	GameController.winning_cable = randi()%2 + 1
+	GameController.winning_cable = (randi()%2) + 1
 	print("You win!")
-	get_tree().change_scene_to_file("res://cena_disarm.tscn")
+	GameController.goto_scene("res://cena_disarm.tscn")
 
 func _lose():
 	timer.stop()
 	print("You lose!")
-	get_tree().change_scene_to_file("res://canvas_layer.tscn")
+	GameController.goto_scene("res://canvas_layer.tscn")
