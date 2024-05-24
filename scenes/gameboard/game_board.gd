@@ -98,3 +98,4 @@ func _win():
 func _lose():
 	timer.stop()
 	print("You lose!")
+	get_tree().change_scene_to_file("res://canvas_layer.tscn")
