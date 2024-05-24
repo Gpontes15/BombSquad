@@ -1,11 +1,12 @@
 extends CanvasLayer
 
+@onready var cor = $MarginContainer/CenterContainer/Rows/Title/Cor
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var colors = ["Azul", "Preto"]
+	var colors = ["Azul", "Vermelho"]
 	var cor_aleatoria = colors[randi() % colors.size()]
-	$Cor.text = "Cor: " + cor_aleatoria
+	cor.text = cor_aleatoria
 
 
 
